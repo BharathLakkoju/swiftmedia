@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SwiftMedia
 
-## Getting Started
+> Browser-based media toolkit — compress images, videos, and PDFs, merge PDFs, and convert images to PDF, all without uploading to a server.
 
-First, run the development server:
+**Live site:** [swiftmedia.cc](https://swiftmedia.cc)
+
+---
+
+## About
+
+SwiftMedia is a privacy-first media processing suite that runs entirely in the browser. Files are processed locally using WebAssembly (FFmpeg) and browser APIs — nothing is ever uploaded to a remote server.
+
+## Features
+
+- **Image Compression** — Reduce image file sizes while preserving quality (JPEG, PNG, WebP)
+- **Video Compression** — Compress MP4 and other video formats in-browser via FFmpeg WebAssembly
+- **PDF Compression** — Shrink PDF file sizes for easier sharing
+- **Merge PDFs** — Combine multiple PDF files into a single document
+- **Image to PDF** — Convert one or more images into a PDF file
+- Animated, accessible UI powered by Framer Motion
+- Privacy-first — all processing is client-side, zero file uploads ever
+
+## Tech Stack
+
+| Category | Technology |
+|----------|-----------|
+| Framework | Next.js 16 (App Router) |
+| UI Library | React 19 |
+| Styling | Tailwind CSS v4 |
+| Language | TypeScript |
+| Video Processing | @ffmpeg/ffmpeg (WebAssembly) |
+| Image Compression | browser-image-compression |
+| PDF Processing | pdf-lib, jspdf |
+| Animations | Framer Motion |
+| Icons | Lucide React |
+| Deployment | Vercel |
+
+## Local Development
 
 ```bash
+git clone https://github.com/BharathLakkoju/swiftmedia
+cd swiftmedia
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Routes
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Route | Feature |
+|-------|---------|
+| `/` | Home — all tools overview |
+| `/compress-image` | Image compression |
+| `/compress-video` | Video compression |
+| `/compress-pdf` | PDF compression |
+| `/merge-pdf` | PDF merger |
+| `/image-to-pdf` | Image to PDF converter |
 
-## Learn More
+## License
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT
