@@ -41,11 +41,11 @@ export async function compressVideo(
     let args: string[] = [];
 
     if (options.quality === "480p") {
-        args = ["-i", inputName, "-vf", "scale=-2:480", "-c:v", "libx264", "-crf", "28", "-preset", "veryfast", outputName];
+        args = ["-i", inputName, "-vf", "scale=-2:480", "-c:v", "libx264", "-crf", "30", "-preset", "ultrafast", "-movflags", "+faststart", outputName];
     } else if (options.quality === "720p") {
-        args = ["-i", inputName, "-vf", "scale=-2:720", "-c:v", "libx264", "-crf", "24", "-preset", "veryfast", outputName];
+        args = ["-i", inputName, "-vf", "scale=-2:720", "-c:v", "libx264", "-crf", "26", "-preset", "ultrafast", "-movflags", "+faststart", outputName];
     } else {
-        args = ["-i", inputName, "-c:v", "libx264", "-crf", "23", "-preset", "veryfast", outputName];
+        args = ["-i", inputName, "-c:v", "libx264", "-crf", "26", "-preset", "ultrafast", "-movflags", "+faststart", outputName];
     }
 
     await ffmpeg.exec(args);
